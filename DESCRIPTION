@@ -1,5 +1,5 @@
 Package: adele30
-Title: What the Package Does (One Line, Title Case)
+Title: Generate Color Palettes Based on Adele 30 Album Cover
 Version: 0.0.0.9000
 Authors@R: 
     person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
