@@ -2,7 +2,7 @@
 % Please edit documentation in R/scale_color_adele30.R
 \name{scale_color_adele30}
 \alias{scale_color_adele30}
-\title{Adele 30 colors for ggplot color aesthetic}
+\title{Adele 30 colors for ggplot2 color aesthetic}
 \usage{
 scale_color_adele30(palette = "full", discrete = TRUE, reverse = FALSE, ...)
 }
@@ -19,5 +19,5 @@ scale_color_adele30(palette = "full", discrete = TRUE, reverse = FALSE, ...)
 
 }
 \description{
-Adele 30 colors for ggplot color aesthetic
+Adele 30 colors for ggplot2 color aesthetic
 }
