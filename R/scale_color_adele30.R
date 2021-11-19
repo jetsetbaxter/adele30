@@ -1,4 +1,4 @@
-#' Title
+#' Adele 30 colors for ggplot color aesthetic
 #'
 #' @param palette Either "full" "face" or "backdrop" - default "full"
 #' @param discrete default TRUE

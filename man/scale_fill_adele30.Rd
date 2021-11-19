@@ -2,7 +2,7 @@
 % Please edit documentation in R/scale_fill_adele30.R
 \name{scale_fill_adele30}
 \alias{scale_fill_adele30}
-\title{Title}
+\title{Adele 30 colors for ggplot fill aesthetic}
 \usage{
 scale_fill_adele30(palette = "full", discrete = TRUE, reverse = FALSE, ...)
 }
@@ -13,11 +13,11 @@ scale_fill_adele30(palette = "full", discrete = TRUE, reverse = FALSE, ...)
 
 \item{reverse}{default FALSE - reverses scale}
 
-\item{...}{}
+\item{...}{additional arguments to be passed to scale functions}
 }
 \value{
 
 }
 \description{
-Title
+Adele 30 colors for ggplot fill aesthetic
 }

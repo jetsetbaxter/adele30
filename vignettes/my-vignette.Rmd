@@ -1,0 +1,90 @@
+---
+title: "Adele 30 ggplot2 palette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.height = 5,
+  fig.width = 6,
+  fig.align = "center",
+  fig.ext = "png"
+)
+```
+
+```{r setup}
+library(ggplot2)
+library(adele30)
+```
+
+# What this is
+
+Inspired by the release of a new [Red (Taylor's Version)](https://github.com/asteves/tayloRswift) ggplot2 palette I threw together one based on the Adele 30 album cover, so we can use it to make graphs while we're waiting for our therapy appointments.
+
+I followed the recipe [here](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2) for creating custom color palettes, and then flailed at my keyboard looking at enough bits of [R Packages](https://r-pkgs.org/index.html) to get it to turn into something that could be installed from github. This was a good motivation to look into what the components of assembling a package are.
+
+# What this does
+
+Install from 
+
+```{r eval=FALSE}
+devtools::install_github("jetsetbaxter/adele30")
+library(adele30)
+```
+
+This makes two functions available
+
+```{r eval=FALSE}
+scale_color_adele30()
+scale_fill_adele30()
+```
+
+that work to set colors for color and fill aesthetics in ggplot2, respectively. The palettes are based on 9 colors from the album cover (captured using eyedropper tool in Pixelmator Pro)
+
+```{r, echo = F}
+cols <- c(
+  `lipstick` = "#7B5761",
+  `blush` = "#8B6F6E",
+  `face` = "#9B93A0",
+  `highlight` = "#A5A998",
+  `blonde` = "#A29278",
+  `backdrop_light` = "#305F6F",
+  `backdrop_med` = "#213A3E",
+  `backdrop_dark` = "#1A2C2E",
+  `brow` = "#322D33")
+n_seq <- seq_along(cols)
+image(1, n_seq, t(as.matrix(n_seq)), col = cols,
+          xlab = "", ylab = "", xaxt = "n", yaxt = "n", bty = "n",
+      main = "")
+text(0.8, n_seq, names(cols), col = "white")
+text(1.2, n_seq, cols, col = "white")
+```
+
+There are 3 palettes available: "full" (all 9 colors), "face" (lipstick, blush, face), and "backdrop" (backdrop_light, backdrop_med, backdrop_dark). 
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() + theme_classic() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_adele30(palette = "full", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() + theme_classic() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_adele30(palette = "backdrop", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() + theme_classic() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_adele30(palette = "face", guide = "none")
+```
