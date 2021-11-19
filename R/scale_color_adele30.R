@@ -3,7 +3,7 @@
 #' @param palette Either "full" "face" or "backdrop" - default "full"
 #' @param discrete default TRUE
 #' @param reverse default FALSE - reverses scale
-#' @param ...
+#' @param ... additional arguments to be passed to scale functions
 #'
 #' @return
 #' @export
